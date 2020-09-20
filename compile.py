@@ -17,7 +17,10 @@ mooc_problems = ['Range', 'Zuma', 'LightHouse',
                 'Toy', 'Schedule', 'Cycle']
 
 for problem in mooc_problems:
-    cmd = 'g++ -o ' + problem + ext[os_id] + ' ' + problem + '.cpp'
+    compiler = 'g++'
+    if os_id == 'windows':
+        compiler = "cl "
+    cmd = compiler + ' -o ' + problem + ext[os_id] + ' ' + problem + '.cpp'
     if problem == 'Temperature':
         cmd += ' temperature_lib.c'
     print(cmd)
