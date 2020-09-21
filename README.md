@@ -7,7 +7,7 @@ This repo is designed to help peers working on these problems, instead of provid
 Pls use the repo in the following way:
 
 ```
-0. Clone the repo(or just download the zip file).
+0. Clone the repo(or just download the zip file) and make binary files executable by `chmod a+x`(.exe for windows, .app for Mac, .bin for Linux).
 
 1. Create your submission file (i.e. `Range.cpp`) and implement your algorithm.
 
