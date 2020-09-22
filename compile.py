@@ -20,8 +20,15 @@ for problem in mooc_problems:
     compiler = 'g++'
     if os_id == 'windows':
         compiler = "cl "
-    cmd = compiler + ' -o ' + problem + ext[os_id] + ' ' + problem + '.cpp'
+    compile_cmd = compiler + ' -o ' + problem + ext[os_id] + ' ' + problem + '.cpp'
     if problem == 'Temperature':
-        cmd += ' temperature_lib.c'
-    print(cmd)
-    os.system(cmd)
+        compile_cmd += ' temperature_lib.c'
+    print(compile_cmd)
+    os.system(compile_cmd)
+
+for problem in mooc_problems:
+    exec_cmd = problem + ext[os_id]
+    if problem != 'Temperature':
+        exec_cmd += ' < ' + problem + '.in'
+    print(exec_cmd)
+    os.system(exec_cmd)
